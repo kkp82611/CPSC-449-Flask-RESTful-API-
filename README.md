@@ -12,18 +12,20 @@ linux: `venv/bin/activate`
 3. install requirements  
 `pip install -r requirements.txt`  
   
-4. change database config in app.py file
+4. run the setup.sql in my sql server
+  
+5. change database config in app.py file
 ```
 conn = pymysql.connect(
     host='hostname',
     user='username',
     password="password",
-    db='database name',
+    db='449_db',
 )
 ```  
   
-5. run sql file to create table for this API
+6. run sql file to create table for this API
   
-6. run the main file  
+7. run the main file  
 windows: `python app.py`   
 linux: `python3 app.py`
