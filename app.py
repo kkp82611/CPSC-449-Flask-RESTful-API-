@@ -43,31 +43,32 @@ cur = conn.cursor()
 # error hendling
 @app.errorhandler(400)
 def bed_request(e):
-    return render_template('400.html'), 400
+    return make_response("error 400", 400)
+    #return render_template('400.html'), 400
 
 
 @app.errorhandler(401)
 def unauthorized(e):
     return make_response("error 401", 401)
-    return render_template('401.html'), 401
+    #return render_template('401.html'), 401
 
 
 @app.errorhandler(403)
 def forbidden(e):
     return make_response("error 403", 403)
-    return render_template('403.html'), 403
+    #return render_template('403.html'), 403
 
 
 @app.errorhandler(404)
 def page_not_found(e):
     return make_response("error 404", 404)
-    return render_template('404.html'), 404
+    #return render_template('404.html'), 404
 
 
 @app.errorhandler(500)
 def internal_Server_error(e):
     return make_response("error 500", 500)
-    return render_template('500.html'), 500
+    #return render_template('500.html'), 500
 
 
 # Authentication
@@ -194,7 +195,7 @@ def uploadfile():
 # the page do not need Authentication and every can acess tis api
 @app.route("/publicroute")
 def publicroute():
-    return make_response("every one can use this")
+    return make_response("every one can use this route")
 
 
 if __name__ == "__main__":
